@@ -1,17 +1,13 @@
 name: Build and publish container main - themed
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+on: [push]
 
 env:
   DOCKER_HUB_ORGANIZATION: ${{ vars.DOCKER_HUB_ORGANIZATION }}
   DOCKER_HUB_REPOSITORY: obp-keycloak
   # Keycloak version — single source of truth for CI/CD builds.
   # Change this value to upgrade Keycloak across all Docker images and Maven dependencies.
-  KEYCLOAK_VERSION: "26.5.1"
+  KEYCLOAK_VERSION: "26.5.3"
 
 jobs:
   build:
